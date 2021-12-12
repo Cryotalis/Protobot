@@ -1,0 +1,444 @@
+<!doctype html>
+<html id="home">
+<head>
+<title>Protobot</title> 
+<link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="menu">
+  <div>
+    <button class="invite discord" onclick="window.open('https://discord.com/oauth2/authorize?client_id=521180443958181889&permissions=379968&scope=bot', '_blank')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Protobot</button>	 
+    <button class="invite paypal" onclick="window.open('https://www.paypal.com/paypalme/cryodev', '_blank')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;</button>
+  </div>
+  <div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="patch.html">Patch Notes</a>
+    <a href="upcoming.html">Upcoming</a>
+    <a href="privacyPolicy.html">Privacy Policy</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div style="visibility: hidden">
+    <button class="invite discord">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Protobot</button>	 
+    <button class="invite paypal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;</button>
+  </div>
+</div>
+
+<button onclick="window.location.href = '#home';" id="myBtn" title="Go to top">Top</button>
+<div class="Protobot">
+  <div>
+    <img style="border-radius:50%" src="https://cdn.discordapp.com/attachments/647256353844232202/919154496565821480/Protobot.png"/>
+  </div>
+  <div style="margin-top: -0.5vw;">
+    <h1>Protobot</h1>
+    <h4>Discord Bot for Dungeon Defenders 2. Made by Cryo#4704.</h4>
+  </div>
+</div>
+<h1>Commands<hr></h1>
+<button class="collapsible">DD2 Commands</button>
+<div class="content">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 30vw">Command</th>
+        <th style="width: 55vw">Description</th>
+        <th style="width: 20vw">Example Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$spark [set/+/-] [number] [crystals/tickets/10parts]</td>
+        <td>Manage your spark profile. You may set all 3 resources with one command by using <b>$spark set X crystals, Y tickets, Z 10parts</b>. Use <b>$sparkle</b> instead for a text-based version.
+          <br><br>
+          <details>
+            <summary>Advanced Usage Tips and Information</summary>
+            <table style="margin-top: 1vw">
+              <thead>
+                <tr>
+                  <th style="width:40vw">Information</th>
+                  <th style="width:15vw">Shortcuts</th>
+                </tr>
+              </thead>
+            <tbody>
+              <tr>
+                <td style="margin-bottom: 0; padding-bottom: 0">$spark accepts a variety of other formats:
+                  <ul style="margin-top: 0;margin-bottom: 0;">
+                    <li><strong>$spark set 1 2 3 </strong> = sets 1 crystal, 2 tickets, 3 Ten Parts</li>
+                    <li><strong>$spark +/- 1 2 3 </strong> = adds or subtracts 1 crystal, 2 tickets, 3 Ten Parts</li>
+                    <li><strong>$spark set 1 -2 3 </strong> = sets 1 crystal, 3 Ten Parts and subtracts 2 tickets</li>
+                    <li><strong>$spark crystals +300 </strong></li>
+                    <li><strong>$spark set 300 crystals tickets 10 2 10Parts</strong> will still set your resources correctly even if you mix and match the formatting.</li>
+                  </ul>
+                  <br>
+                  You may use a bookmarklet in game on the Draw page to copy a <strong>$spark set</strong> command (with your resources already filled in) to your clipboard. Drag and drop this 
+                  <a href='javascript: var ten = parseInt(Game.view.gachaModel.attributes.legend.lineup.filter(a=>a.ticket_id==20010)[0].ticket_num),tix = parseInt(Game.view.gachaModel.attributes.legend.lineup.filter(a=>a.ticket_id==20011)[0].ticket_num),xtal = parseInt(Game.view.gachaModel.attributes.user_info.user_money);var sparkCmd=$("<textarea/>");sparkCmd.text(`$spark set ${xtal} ${tix} ${ten}`);$("body").append(sparkCmd),sparkCmd.select(),document.execCommand("copy"),sparkCmd.remove();'>Europa $spark</a> 
+                  bookmarklet onto your bookmarks bar if you'd like to use this. For more information on bookmarklets and how they work, see <a href="https://en.wikipedia.org/wiki/Bookmarklet#:~:text=Bookmarklets%20are%20unobtrusive%20JavaScripts%20stored,a%20browser%20or%20web%20page.">here</a>.
+                </td>
+                <td style="padding-bottom: 0; padding-top: 0">
+                  <ul style="list-style-type: none;padding: 0;">
+                    <li>crystals ⇄ xtals</li>
+                    <li>tickets ⇄ tix</li>
+                    <li>10parts ⇄ 10p ⇄ 10-p</li>
+                    <li>10parts ⇄ 10tix ⇄ tentix</li>
+                    <li>10parts ⇄ tenparts</li>
+                    <li>+ ⇄ add ⇄ plus</li>
+                    <li>- ⇄ subtract ⇄ minus</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+            </table>
+          </details>
+        </td>
+        <td>$spark set 12345 crystals <br>$spark +1 ticket <br>$spark -3000 crystals</td>
+      </tr>
+      <tr>
+        <td>$spark [reset/delete]<br>$spark profile [user]</td>
+        <td>Reset, delete, or display your spark profile. Include a username after profile to search for and display someone else's spark profile. Use <b>$sparkle</b> instead for a text-based version.
+          <br><br>
+          <details>
+            <summary>Advanced Usage Tips and Information</summary>
+            <table style="margin-top: 1vw">
+              <thead>
+                <tr>
+                  <th style="width:40vw">Information</th>
+                  <th style="width:15vw">Shortcuts</th>
+                </tr>
+              </thead>
+            <tbody>
+              <tr>
+                <td style="margin-bottom: 0; padding-bottom: 0;"><strong>$spark profile</strong> or <strong>$spark</strong> will display your own information. Include a name after <strong>$spark profile</strong> or <strong>$spark</strong> to search for another user.
+                  <ul style="margin-top: 0">
+                  </ul>
+                </td>
+                <td style="padding-bottom: 0; padding-top: 0">
+                  <ul style="list-style-type: none;padding: 0;">
+                    <li>$spark profile ⇄ $spark</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+            </table>
+          </details>
+        </td>
+        <td>$spark<br>$spark reset<br>$spark profile Cryo</td>
+      </tr>
+      <tr>
+        <td>$spark background [link/attachment]</td>
+        <td>Set a custom background for your spark profile. Using <strong>$spark background</strong> without a link will reset your background to the default background. You can also set your background by uploading an image along with the command.
+          <br><br>
+          <details>
+            <summary>Advanced Usage Tips and Information</summary>
+            <p>Shortcut: background ⇄ bg</p>
+          </details>
+        </td>
+        <td>$spark background <a style="color:blue;cursor: pointer;" onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">img_link</a></td>
+      </tr>
+      <tr>
+        <td>$events</td>
+        <td>Displays current and upcoming events. Use <strong>$event</strong> instead for a text-based version.</td>
+        <td>$events</td>
+      </tr>
+      <tr>
+        <td>$crew [name/id] [CrewName/CrewID]</td>
+        <td>Searches for a crew given crew name or crew ID and displays the crew page.</td>
+        <td>$crew name Mint<br>$crew id 1655580</td>
+      </tr>
+      <tr>
+        <td>$player [name/id] [PlayerName/PlayerID]</td>
+        <td>Searches for a player given player name or player ID and displays the player profile page.</td>
+        <td>$player name Cryo<br>$player id 21213996</td>
+      </tr>
+      <tr>
+        <td>$summons [name/id] [PlayerName/PlayerID]</td>
+        <td>Searches for a player given player name or player ID and displays the player's support summons.</td>
+        <td>$summons name Cryo<br>$summons id 21213996</td>
+      </tr>
+      <tr>
+        <td>$roll [number] [singles/10parts]<br>$roll [spark/funds]<br>$roll until [character/summon]</td>
+        <td>Roll on the current banner for a set amount of times. <strong>$roll spark</strong> rolls 30 Ten Part Tickets (300 times), <strong>$roll funds</strong> rolls for however many rolls you have in your spark profile, and <strong>$roll until</strong> rolls until you roll the character or summon you specified.
+          <br><br>
+          <details>
+            <summary>Advanced Usage Tips and Information</summary>
+            <table style="margin-top: 1vw">
+              <thead>
+                <tr>
+                  <th style="width:40vw">Information</th>
+                  <th style="width:15vw">Shortcuts</th>
+                </tr>
+              </thead>
+            <tbody>
+              <tr>
+                <td style="margin-bottom: 0; padding-bottom: 0;">Non-Ticketable Summons and Limited Characters will automatically be moved to the top of the list when you roll. You can put "summon" or "character" after your gacha target to specify whether your target is a character or a summon.
+                  <ul style="margin-top: 0">
+                  </ul>
+                </td>
+                <td style="padding-bottom: 0; padding-top: 0">
+                  <ul style="list-style-type: none;padding: 0;">
+                    <li>10parts ⇄ tenparts</li>
+                    <li>10parts ⇄ 10-parts</li>
+                    <li>funds ⇄ yeet</li>
+                    <li>until ⇄ till</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+            </table>
+          </details>
+        </td>
+        <td>$roll 3 10parts<br>$roll spark<br>$roll until Europa</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button class="collapsible">Miscellaneous Commands</button>
+<div class="content">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 30vw">Command</th>
+        <th style="width: 55vw">Description</th>
+        <th style="width: 20vw">Example Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$ask [question]</td>
+        <td>Ask Protobot a yes/no question.</td>
+        <td>$ask do I yeet rolls?</td>
+      </tr>
+      <tr>
+        <td>$choose [options]</td>
+        <td>Ask Protobot to choose between 2 or more things. Options must be separated by commas.
+          <br><br>
+          <details>
+            <summary>Advanced Usage Tips and Information</summary>
+            <p>Options can be separated by any character that is not a number, letter, space, or underscore. Any of these characters will work: <strong>- + = [ ] { } \ | / ' " : ; , . /</strong></p>
+          </details>
+        </td>
+        <td>$choose homework, gbf</td>
+      </tr>
+      <tr>
+        <td>$mock [text]</td>
+        <td>COnverT tExt INTo mOCKinG spOngebOB tEXT.</td>
+        <td>$mock we are wind</td>
+      </tr>
+      <tr>
+        <td>$drunk [text]</td>
+        <td>Convfrt text joto erunk text.</td>
+        <td>$drunk I'm already drunk</td>
+      </tr>
+      <tr>
+        <td>$question</td>
+        <td>Generates a random conversation question.</td>
+        <td>$question</td>
+      </tr>
+      <tr>
+        <td>$time</td>
+        <td>Displays the current time in Japan.
+          <br><br>
+          <details>
+            <summary>Advanced Usage Tips and Information</summary>
+            <table style="margin-top: 1vw">
+              <thead>
+                <tr>
+                  <th style="width:40vw">Information</th>
+                  <th style="width:15vw">Shortcuts</th>
+                </tr>
+              </thead>
+            <tbody>
+              <tr>
+                <td style="margin-bottom: 0; padding-bottom: 0;">Can also be used to convert a certain date (optional) and time from one timezone to another. Example: <strong>$time March 8 7pm JST to PDT</strong><br><br>Timezones taken from: <a href="https://www.timeanddate.com/time/zones/" target="_blank">https://www.timeanddate.com/time/zones/</a>
+                  <ul style="margin-top: 0">
+                  </ul>
+                </td>
+                <td style="padding-bottom: 0; padding-top: 0">
+                  <ul style="list-style-type: none;padding: 0;">
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+            </table>
+          </details>
+        </td>
+        <td>$time</td>
+      </tr>
+      <tr>
+        <td>$translate [text] to [language]</td>
+        <td>Translates the given text to the given language. If a language is not given, the given text will be translated to English. Supports most languages supported by Google Translate.</td>
+        <td>$translate 雪花 to Japanese<br>$translate エウロペ</td>
+      </tr>
+      <tr>
+        <td>$remind [reminder] at/on [date/time] repeat every [interval]<br>$remind [reminder] in [time]</td>
+        <td>Create a reminder for yourself. Date and repeat are optional. Timezone defaults to UTC. Accepts a wide variety of date/time formats.<br><br>Example Usage:
+          <ul style="margin-top: 0;margin-bottom:0">
+            <li><strong>$remind Do Dailies on March 8th 8am PDT repeat every day</strong></li>
+            <li><strong>$remind Walk Garjana at 2PM PDT</strong></li>
+            <li><strong>$remind Coop with crew in 4 hours</strong></li>
+          </ul>
+        </td>
+        <td>See Description for Example usage.</td>
+      </tr>
+      <tr>
+        <td>$reminders [list/edit/delete]</td>
+        <td>Shows you your reminders and allows you to edit or delete your reminders.</td>
+        <td>$reminders list<br>$reminders delete</td>
+      </tr>
+      <tr>
+        <td>$feedback [feedback]</td>
+        <td>Submit feedback or suggestions for Protobot.</td>
+        <td>$feedback Protobot is awesome!</td>
+      </tr>
+      <tr>
+        <td>$bugreport [bug]</td>
+        <td>Submit a bug report for Protobot.</td>
+        <td>$bugreport $spark isn't working.</td>
+      </tr>
+      <tr>
+        <td>$ping</td>
+        <td>Show's Protobot's response time.</td>
+        <td>$ping</td>
+      </tr>
+      <tr>
+        <td>$help</td>
+        <td>Displays a link to this website and a link to Protobot's support Discord server.</td>
+        <td>$help</td>
+      </tr>
+      <tr>
+        <td>@Protobot</td>
+        <td>Tells you the current command prefix and mod command prefix for Protobot.</td>
+        <td>@Protobot</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button class="collapsible">Mod Commands (Admin Only)</button>
+<div class="content">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 30vw">Command</th>
+        <th style="width: 55vw">Description</th>
+        <th style="width: 20vw">Example Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>=prefix [prefix]<br>=modprefix [prefix]</td>
+        <td>Set a custom prefix or modprefix for your server. Not providing a prefix resets the prefixes to their defaults.</td>
+        <td>=prefix !<br>=modprefix ?</td>
+      </tr>
+      <tr>
+        <td>=disable [command] [channel(s)]<br>=enable [command] [channel(s)]</td>
+        <td>Disable or enable a command in one or more channels. Not specifying any channels disables or enables the command in all channels.
+          <br><br>
+          <details>
+            <summary>Advanced Usage Tips and Information</summary>
+            <p>You can whitelist a command in a certain channel or channels by first disabling the command in all channels and then enabling it in a certain channel or channels.</strong></p>
+          </details>
+        </td>
+        <td>=disable player #general<br>=enable spark #bot-spam</td>
+      </tr>
+      <tr>
+        <td>=disabled</td>
+        <td>Shows which commands are currently disabled on the server.</td>
+        <td>=disabled</td>
+      </tr>
+    </tbody>
+  </table>
+</div><br>
+<h1>Features<hr></h1>
+<div class="wrap">
+  <div class="image">
+    <img style="max-width:40vw" src="images/EuropaSparkProfile.png"> 
+  </div>
+  <div class="features">
+    <h2>Customized Spark Profile</h2>
+    <div class="description bordered">  
+        <p>Granblue Fantasy themed profile card with a customizable background.<br><br>You'll get a congratulatory message when you've saved up for a spark.</p>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="image">
+    <img class="bordered" style="max-width:40vw;" src="images/EuropaGreeting.png"> 
+  </div>
+  <div class="features">
+    <h2>Customizable Welcome Message</h2>
+    <div class="description bordered">  
+        <p>Customizable background and welcome message. Choose what channel the message is sent in, and choose whether to enable leave messages and ban messages.</p>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="image">
+    <img class="bordered" style="max-width:45vw;object-fit: cover;width:540px;height:505px" src="gifs/EuropaPlayerSearch.gif"> 
+  </div>
+  <div class="features">
+    <h2>Player Search</h2>
+    <div class="description bordered">  
+        <p>Search for a player by ID or player name. Displays an image containing the player's profile page, support summons, and star character.</p>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="image">
+    <img class="bordered" style="max-width:45vw;object-fit: cover;width:500px;height:505px" src="gifs/EuropaSparkUpdater.gif"> 
+  </div>
+  <div class="features">
+    <h2>Automatically Updated Spark Counters</h2>
+    <div class="description bordered">  
+        <p>Automatically updates the spark counter in your nickname as you key in your spark funds.<br><br>Accepted formats: (000/300) & 00.00%<br><br>Europa's role must be in a higher position than the roles of those whose nicknames she is trying to update in order for this to work.<br><br>This feature does not work for the server owner due to a Discord limitation.</p>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="image">
+    <img style="max-width:35vw;" src="images/EuropaEvents.png"> 
+  </div>
+  <div class="features">
+    <h2>Events</h2>
+    <div class="description bordered">  
+        <p>Shows current and upcoming events. Tells you how much time is left in current events and tells you when upcoming events start.</p>
+    </div>
+  </div>
+</div>
+<h1 id="contact">Contact<hr></h1> 
+<p class="contact" style="font-size: 1vw;">Need to talk to me directly about a suggestion or a bug? Join my <a href="https://discord.gg/YtwzVSp" style="color:cornflowerblue">Discord Server</a> or contact me directly via PM (you need to add me as a friend to do this) on Discord at Cryo#4704.
+  <br>
+  You may also contact me on Twitter <a style="color:cornflowerblue" target="_blank" href="https://twitter.com/Cryotalis">here</a> or on Reddit <a style="color:cornflowerblue" target="_blank" href="https://www.reddit.com/user/Cry0_">here</a>.
+  <br><br>
+<iframe src="https://discordapp.com/widget?id=379501550097399810&theme=dark" width="350" height="400" allowtransparency="true" frameborder="0"></iframe>
+<script>
+  //Get the button:
+  mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 400px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  /* Code to allow for the collapsing of command categories. Categories are expanded by default.*/
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("collapsibleActive");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight < content.scrollHeight + "px" && content.style.maxHeight !== ""){
+        content.style.maxHeight = content.scrollHeight + "px";
+      } else {
+        content.style.maxHeight = "0px";
+      } 
+    });
+  }
+</script>
+</body>	
+</html>

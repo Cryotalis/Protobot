@@ -1,0 +1,85 @@
+<!doctype html>
+<html id="home">
+<head>
+<title>Protobot</title> 
+<link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="menu">
+        <div>
+          <button class="invite discord" onclick="window.open('https://discord.com/oauth2/authorize?client_id=521180443958181889&permissions=379968&scope=bot', '_blank')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Protobot</button>	 
+          <button class="invite paypal" onclick="window.open('https://www.paypal.com/paypalme/cryodev', '_blank')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>
+        <div class="topnav">
+          <a href="index.html">Home</a>
+          <a href="patch.html">Patch Notes</a>
+          <a href="upcoming.html">Upcoming</a>
+          <a class="active" href="privacyPolicy.html">Privacy Policy</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div style="visibility: hidden">
+          <button class="invite discord">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Protobot</button>	 
+          <button class="invite paypal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>
+    </div>
+  
+  <button onclick="window.location.href = '#home';" id="myBtn" title="Go to top">Top</button>
+  <div class="Protobot">
+    <div>
+      <img style="border-radius:50%" src="https://cdn.discordapp.com/attachments/647256353844232202/919154496565821480/Protobot.png"/>
+    </div>
+    <div style="margin-top: -0.5vw;">
+      <h1>Protobot</h1>
+      <h4>Discord Bot for Dungeon Defenders 2. Made by Cryo#4704.</h4>
+    </div>
+  </div>
+<h1>Privacy and Data Usage Policy<hr></h1>
+I only store data that is necessary for Europa to function properly. All user data is kept private, and in the event of a breach, I would do my best to notify all users as soon as possible. Virtually none of the data I collect through Europa would be data that anyone can do anything with, but in the event that you entered in some kind of sensitive information for any Europa command (or if you just don't want your data to remain in my database), you may contact me to have it deleted. I do not give out your data to anyone and I do not collect any data other than what is listed below.
+<br><br>
+Most probably do not know that I use a Google Spreadsheet as a database. Here is a link to a blank copy of Europa's database: <a target="_blank" style="color:cornflowerblue" href="https://docs.google.com/spreadsheets/d/1iOwjXjIiHDgTUo4TiGuo0lg8G99OwkDIgAUvf9-fGcE">Europa Database Template</a>
+<br><br>
+I will now outline below all the data that I store and provide reasons as to why I need to store this data:
+<br>
+<h3>Intro</h3>
+Nothing important is stored here. I include an intro page on almost any spreadsheet I make.
+<h3>Servers</h3>
+Guild Name and Guild ID are stored so that Europa can identify your guild (server) when you use commands. Greeting, Roles, Prefix, Mod Prefix, and Commands (which commands are disabled) settings are all tied to your server.<br>
+Guild (Server) Name is stored so that Europa may fall back on it if she is unable to identify your guild (server) by the ID. When you kick Europa from your server, your server information will be kept in case you want her back. If for whatever reason you'd like me to delete this data from the database, feel free to contact me.
+<h3>Spark</h3>
+User Tag and User ID are stored so that Europa can identify you when you use the $spark command. Crystals, Tickets, 10 Parts, Percent, Rolls, Background are all tied to your ID and Tag.<br>
+User Tag is stored so that Europa may fall back on it if she is unable to identify you by your ID. If you'd like to delete all data on your spark profile, you can run $spark delete.
+<h3>Translate</h3>
+This tab is necessary for the $translate command to work, as I use Google Spreadsheet formulas to make it work. The contents of this sheet are periodically deleted, but this does mean that I can see the kinds of things that you are using the translate command for. Even if the contents were deleted right after command execution, I can still see what was once there through Google Spreadsheet's edit history, so I've opted to instead just automatically delete the contents every month or so.
+<h3>Data</h3>
+This tab stores data on all the weapons and summons in the game for Europa to reference for the $roll command. No user data is stored here.
+<h3>Announcements</h3>
+This tab stores all the announcements and reminders users create. Europa will restart herself periodically, and she can sometimes crash due to errors. The announcements and reminders are stored here so that she can continue sending them out and keeping track of them even if she needs to restart. 
+<hr>
+<h3>Additional Ways Data is Logged</h3>
+<ul>
+  <li>When someone uses a command, Europa logs what command it was, when it was used, and the guild (server) name and guild ID of the guild it was used in. This is for debugging purposes.<br>Here's an example of what that looks like:<br>
+  <img src="images/EuropaLog.PNG">
+  </li>
+  <li>When someone sends in a bug report or feedback, Europa logs it, so that I can see it and reply to it if necessary. Username and user ID are logged when either of the two commands are used.<br>Here's an example of what that looks like:<br>
+    <img src="images/EuropaFeedbackAndBugReport.PNG">
+  </li>
+</ul>
+<br><br><br><br><br>
+<script>
+  //Get the button:
+  mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 400px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>
