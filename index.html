@@ -47,146 +47,88 @@
     </thead>
     <tbody>
       <tr>
-        <td>$spark [set/+/-] [number] [crystals/tickets/10parts]</td>
-        <td>Manage your spark profile. You may set all 3 resources with one command by using <b>$spark set X crystals, Y tickets, Z 10parts</b>. Use <b>$sparkle</b> instead for a text-based version.
+        <td>dd!shard [shard name]</td>
+        <td>Search for any shard in DD2.
+        </td>
+        <td>dd!shard destruction</td>
+      </tr>
+      <tr>
+        <td>dd!mod [mod name]</td>
+        <td>Search for any mod in DD2.
+        </td>
+        <td>dd!mod defense rate</td>
+      </tr>
+      <tr>
+        <td>dd!price [amount] [quality/rarity] [item]</td>
+        <td>Find recommended prices for items in DD2. When specifying an amount of material, the amount should be followed immediately by an x.
           <br><br>
           <details>
             <summary>Advanced Usage Tips and Information</summary>
-            <table style="margin-top: 1vw">
-              <thead>
-                <tr>
-                  <th style="width:40vw">Information</th>
-                  <th style="width:15vw">Shortcuts</th>
-                </tr>
-              </thead>
-            <tbody>
-              <tr>
-                <td style="margin-bottom: 0; padding-bottom: 0">$spark accepts a variety of other formats:
-                  <ul style="margin-top: 0;margin-bottom: 0;">
-                    <li><strong>$spark set 1 2 3 </strong> = sets 1 crystal, 2 tickets, 3 Ten Parts</li>
-                    <li><strong>$spark +/- 1 2 3 </strong> = adds or subtracts 1 crystal, 2 tickets, 3 Ten Parts</li>
-                    <li><strong>$spark set 1 -2 3 </strong> = sets 1 crystal, 3 Ten Parts and subtracts 2 tickets</li>
-                    <li><strong>$spark crystals +300 </strong></li>
-                    <li><strong>$spark set 300 crystals tickets 10 2 10Parts</strong> will still set your resources correctly even if you mix and match the formatting.</li>
-                  </ul>
-                  <br>
-                  You may use a bookmarklet in game on the Draw page to copy a <strong>$spark set</strong> command (with your resources already filled in) to your clipboard. Drag and drop this 
-                  <a href='javascript: var ten = parseInt(Game.view.gachaModel.attributes.legend.lineup.filter(a=>a.ticket_id==20010)[0].ticket_num),tix = parseInt(Game.view.gachaModel.attributes.legend.lineup.filter(a=>a.ticket_id==20011)[0].ticket_num),xtal = parseInt(Game.view.gachaModel.attributes.user_info.user_money);var sparkCmd=$("<textarea/>");sparkCmd.text(`$spark set ${xtal} ${tix} ${ten}`);$("body").append(sparkCmd),sparkCmd.select(),document.execCommand("copy"),sparkCmd.remove();'>Europa $spark</a> 
-                  bookmarklet onto your bookmarks bar if you'd like to use this. For more information on bookmarklets and how they work, see <a href="https://en.wikipedia.org/wiki/Bookmarklet#:~:text=Bookmarklets%20are%20unobtrusive%20JavaScripts%20stored,a%20browser%20or%20web%20page.">here</a>.
-                </td>
-                <td style="padding-bottom: 0; padding-top: 0">
-                  <ul style="list-style-type: none;padding: 0;">
-                    <li>crystals ⇄ xtals</li>
-                    <li>tickets ⇄ tix</li>
-                    <li>10parts ⇄ 10p ⇄ 10-p</li>
-                    <li>10parts ⇄ 10tix ⇄ tentix</li>
-                    <li>10parts ⇄ tenparts</li>
-                    <li>+ ⇄ add ⇄ plus</li>
-                    <li>- ⇄ subtract ⇄ minus</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-            </table>
+            <p style="margin-bottom: 0.5vw;">All parameters except the item are optional. Defaults for the parameters are as follows:</p>
+            <ul style="margin: 0;">
+                <li>Mod Quality: 10/10</li>
+                <li>Mod Type: Servo</li>
+                <li>Material Amount: 99x (or 1x in special cases)</li>
+                <li>Pet Rarity: Highest Rarity (Legendary or Mythical)</li>
+            </ul>
+            <p>Prices taken from <a href="http://bit.ly/dd2market" target="_blank">http://bit.ly/dd2market</a></p>
           </details>
         </td>
-        <td>$spark set 12345 crystals <br>$spark +1 ticket <br>$spark -3000 crystals</td>
+        <td>dd!price 9/10 controller servo<br>dd!price 5x c9 amps<br>dd!price legendary protobud</td>
       </tr>
       <tr>
-        <td>$spark [reset/delete]<br>$spark profile [user]</td>
-        <td>Reset, delete, or display your spark profile. Include a username after profile to search for and display someone else's spark profile. Use <b>$sparkle</b> instead for a text-based version.
+        <td>dd!drakenfrost</td>
+        <td>Shows the weapons and mods that are in rotation in Drakenfrost Keep.<br><br>Shortcut: drakenfrost ⇄ dfk
+        </td>
+        <td>dd!drakenfrost</td>
+      </tr>
+      <tr>
+        <td>dd!minasc [ascension] [floor]</td>
+        <td>Calculates your minimum ascension and talent caps, and gives you a suggestion on when to reset.<br><br>Shortcut: minasc ⇄ min
+        </td>
+        <td>dd!minasc 6969 420</td>
+      </tr>
+      <tr>
+        <td>dd!listshards [hero] [slot] [difficulty]</td>
+        <td>Lists all shards that are equippable on a given slot on a given hero from a given difficulty. Slot refers to relic/helmet/boots/etc; difficulty refers to Chaos tier.
           <br><br>
           <details>
             <summary>Advanced Usage Tips and Information</summary>
-            <table style="margin-top: 1vw">
-              <thead>
-                <tr>
-                  <th style="width:40vw">Information</th>
-                  <th style="width:15vw">Shortcuts</th>
-                </tr>
-              </thead>
-            <tbody>
-              <tr>
-                <td style="margin-bottom: 0; padding-bottom: 0;"><strong>$spark profile</strong> or <strong>$spark</strong> will display your own information. Include a name after <strong>$spark profile</strong> or <strong>$spark</strong> to search for another user.
-                  <ul style="margin-top: 0">
-                  </ul>
-                </td>
-                <td style="padding-bottom: 0; padding-top: 0">
-                  <ul style="list-style-type: none;padding: 0;">
-                    <li>$spark profile ⇄ $spark</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-            </table>
+            <p style="margin-bottom: 0.5vw;">You must specify at least one parameter. You may input "All" for heroes to list all shards that can be used by ALL heroes, and "Armor" to list shards that go on any armor slot.</p>
+            <p>Shortcut: listshards ⇄ ls </a></p>
           </details>
         </td>
-        <td>$spark<br>$spark reset<br>$spark profile Cryo</td>
+        <td>dd!listshards Monk relic<br>dd!listshards Mercenary armor<br>dd!listshards Chaos 5 weapon</td>
       </tr>
       <tr>
-        <td>$spark background [link/attachment]</td>
-        <td>Set a custom background for your spark profile. Using <strong>$spark background</strong> without a link will reset your background to the default background. You can also set your background by uploading an image along with the command.
+        <td>dd!listmods [hero] [slot] [difficulty]</td>
+        <td>Lists all mods that are equippable on a given slot on a given hero from a given difficulty. Slot here refers to armor/relic/weapon; difficulty refers to Chaos tier.
           <br><br>
           <details>
             <summary>Advanced Usage Tips and Information</summary>
-            <p>Shortcut: background ⇄ bg</p>
+            <p style="margin-bottom: 0.5vw;">You must specify at least one parameter. You may input "All" for heroes to list all mods that can be used by ALL heroes. If the mod can drop from a range of chaos tiers, the mod will be included in the list as long as it is within the range.</p>
+            <p>Shortcut: listmods ⇄ lm </a></p>
           </details>
         </td>
-        <td>$spark background <a style="color:blue;cursor: pointer;" onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">img_link</a></td>
+        <td>dd!listmods Apprentice<br>dd!listmods Chaos 4 Armor<br>dd!listmods Weapon</td>
       </tr>
       <tr>
-        <td>$events</td>
-        <td>Displays current and upcoming events. Use <strong>$event</strong> instead for a text-based version.</td>
-        <td>$events</td>
-      </tr>
-      <tr>
-        <td>$crew [name/id] [CrewName/CrewID]</td>
-        <td>Searches for a crew given crew name or crew ID and displays the crew page.</td>
-        <td>$crew name Mint<br>$crew id 1655580</td>
-      </tr>
-      <tr>
-        <td>$player [name/id] [PlayerName/PlayerID]</td>
-        <td>Searches for a player given player name or player ID and displays the player profile page.</td>
-        <td>$player name Cryo<br>$player id 21213996</td>
-      </tr>
-      <tr>
-        <td>$summons [name/id] [PlayerName/PlayerID]</td>
-        <td>Searches for a player given player name or player ID and displays the player's support summons.</td>
-        <td>$summons name Cryo<br>$summons id 21213996</td>
-      </tr>
-      <tr>
-        <td>$roll [number] [singles/10parts]<br>$roll [spark/funds]<br>$roll until [character/summon]</td>
-        <td>Roll on the current banner for a set amount of times. <strong>$roll spark</strong> rolls 30 Ten Part Tickets (300 times), <strong>$roll funds</strong> rolls for however many rolls you have in your spark profile, and <strong>$roll until</strong> rolls until you roll the character or summon you specified.
-          <br><br>
-          <details>
-            <summary>Advanced Usage Tips and Information</summary>
-            <table style="margin-top: 1vw">
-              <thead>
-                <tr>
-                  <th style="width:40vw">Information</th>
-                  <th style="width:15vw">Shortcuts</th>
-                </tr>
-              </thead>
-            <tbody>
-              <tr>
-                <td style="margin-bottom: 0; padding-bottom: 0;">Non-Ticketable Summons and Limited Characters will automatically be moved to the top of the list when you roll. You can put "summon" or "character" after your gacha target to specify whether your target is a character or a summon.
-                  <ul style="margin-top: 0">
-                  </ul>
-                </td>
-                <td style="padding-bottom: 0; padding-top: 0">
-                  <ul style="list-style-type: none;padding: 0;">
-                    <li>10parts ⇄ tenparts</li>
-                    <li>10parts ⇄ 10-parts</li>
-                    <li>funds ⇄ yeet</li>
-                    <li>until ⇄ till</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-            </table>
-          </details>
+        <td>dd!link [resource]</td>
+        <td>Summon a link to a commonly referenced resource.
         </td>
-        <td>$roll 3 10parts<br>$roll spark<br>$roll until Europa</td>
+        <td>dd!link DPS</td>
+      </tr>
+      <tr>
+        <td>dd!image [name]</td>
+        <td>Summon a commonly referenced image.<br><br>Shortcut: image ⇄ img
+        </td>
+        <td>dd!image prime</td>
+      </tr>
+      <tr>
+        <td>dd!faq [FAQ]</td>
+        <td>Summon an answer to a frequently asked question.
+        </td>
+        <td>dd!faq patch</td>
       </tr>
     </tbody>
   </table>
@@ -203,12 +145,12 @@
     </thead>
     <tbody>
       <tr>
-        <td>$ask [question]</td>
+        <td>dd!ask [question]</td>
         <td>Ask Protobot a yes/no question.</td>
-        <td>$ask do I yeet rolls?</td>
+        <td>dd!ask is water wet?</td>
       </tr>
       <tr>
-        <td>$choose [options]</td>
+        <td>dd!choose [option1, option2, ...]</td>
         <td>Ask Protobot to choose between 2 or more things. Options must be separated by commas.
           <br><br>
           <details>
@@ -216,93 +158,54 @@
             <p>Options can be separated by any character that is not a number, letter, space, or underscore. Any of these characters will work: <strong>- + = [ ] { } \ | / ' " : ; , . /</strong></p>
           </details>
         </td>
-        <td>$choose homework, gbf</td>
+        <td>dd!choose homework, DD2</td>
       </tr>
       <tr>
-        <td>$mock [text]</td>
+        <td>dd!mock [text]</td>
         <td>COnverT tExt INTo mOCKinG spOngebOB tEXT.</td>
-        <td>$mock we are wind</td>
+        <td>dd!mock why did they nerf rb</td>
       </tr>
       <tr>
-        <td>$drunk [text]</td>
+        <td>dd!drunk [text]</td>
         <td>Convfrt text joto erunk text.</td>
-        <td>$drunk I'm already drunk</td>
+        <td>dd!drunk temple is the best map</td>
       </tr>
       <tr>
-        <td>$question</td>
+        <td>dd!question</td>
         <td>Generates a random conversation question.</td>
-        <td>$question</td>
+        <td>dd!question</td>
       </tr>
       <tr>
-        <td>$time</td>
-        <td>Displays the current time in Japan.
+        <td>dd!time</td>
+        <td>Displays the current time in Gainesville, Florida.
           <br><br>
           <details>
             <summary>Advanced Usage Tips and Information</summary>
-            <table style="margin-top: 1vw">
-              <thead>
-                <tr>
-                  <th style="width:40vw">Information</th>
-                  <th style="width:15vw">Shortcuts</th>
-                </tr>
-              </thead>
-            <tbody>
-              <tr>
-                <td style="margin-bottom: 0; padding-bottom: 0;">Can also be used to convert a certain date (optional) and time from one timezone to another. Example: <strong>$time March 8 7pm JST to PDT</strong><br><br>Timezones taken from: <a href="https://www.timeanddate.com/time/zones/" target="_blank">https://www.timeanddate.com/time/zones/</a>
-                  <ul style="margin-top: 0">
-                  </ul>
-                </td>
-                <td style="padding-bottom: 0; padding-top: 0">
-                  <ul style="list-style-type: none;padding: 0;">
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-            </table>
+            <p>Can also be used to convert a certain date (optional) and time from one timezone to another.<br>Example: <strong>dd!time March 8 7pm PST to EST</strong></p>
+            <p>Timezones taken from <a href="https://www.timeanddate.com/time/zones/" target="_blank">https://www.timeanddate.com/time/zones/</a></p>
           </details>
         </td>
-        <td>$time</td>
+        <td>dd!time</td>
       </tr>
       <tr>
-        <td>$translate [text] to [language]</td>
-        <td>Translates the given text to the given language. If a language is not given, the given text will be translated to English. Supports most languages supported by Google Translate.</td>
-        <td>$translate 雪花 to Japanese<br>$translate エウロペ</td>
-      </tr>
-      <tr>
-        <td>$remind [reminder] at/on [date/time] repeat every [interval]<br>$remind [reminder] in [time]</td>
-        <td>Create a reminder for yourself. Date and repeat are optional. Timezone defaults to UTC. Accepts a wide variety of date/time formats.<br><br>Example Usage:
-          <ul style="margin-top: 0;margin-bottom:0">
-            <li><strong>$remind Do Dailies on March 8th 8am PDT repeat every day</strong></li>
-            <li><strong>$remind Walk Garjana at 2PM PDT</strong></li>
-            <li><strong>$remind Coop with crew in 4 hours</strong></li>
-          </ul>
-        </td>
-        <td>See Description for Example usage.</td>
-      </tr>
-      <tr>
-        <td>$reminders [list/edit/delete]</td>
-        <td>Shows you your reminders and allows you to edit or delete your reminders.</td>
-        <td>$reminders list<br>$reminders delete</td>
-      </tr>
-      <tr>
-        <td>$feedback [feedback]</td>
+        <td>dd!feedback [feedback]</td>
         <td>Submit feedback or suggestions for Protobot.</td>
-        <td>$feedback Protobot is awesome!</td>
+        <td>dd!feedback Protobot is awesome!</td>
       </tr>
       <tr>
-        <td>$bugreport [bug]</td>
+        <td>dd!bugreport [bug]</td>
         <td>Submit a bug report for Protobot.</td>
-        <td>$bugreport $spark isn't working.</td>
+        <td>dd!bugreport dd!shard isn't working.</td>
       </tr>
       <tr>
-        <td>$ping</td>
-        <td>Show's Protobot's response time.</td>
-        <td>$ping</td>
+        <td>dd!ping</td>
+        <td>Shows Protobot's response time.</td>
+        <td>dd!ping</td>
       </tr>
       <tr>
-        <td>$help</td>
+        <td>dd!help</td>
         <td>Displays a link to this website and a link to Protobot's support Discord server.</td>
-        <td>$help</td>
+        <td>dd!help</td>
       </tr>
       <tr>
         <td>@Protobot</td>
@@ -324,12 +227,12 @@
     </thead>
     <tbody>
       <tr>
-        <td>=prefix [prefix]<br>=modprefix [prefix]</td>
+        <td>dd?prefix [prefix]<br>dd?modprefix [prefix]</td>
         <td>Set a custom prefix or modprefix for your server. Not providing a prefix resets the prefixes to their defaults.</td>
-        <td>=prefix !<br>=modprefix ?</td>
+        <td>dd?prefix !<br>dd?modprefix ?</td>
       </tr>
       <tr>
-        <td>=disable [command] [channel(s)]<br>=enable [command] [channel(s)]</td>
+        <td>dd?disable [command] [channel(s)]<br>dd?enable [command] [channel(s)]</td>
         <td>Disable or enable a command in one or more channels. Not specifying any channels disables or enables the command in all channels.
           <br><br>
           <details>
@@ -337,12 +240,12 @@
             <p>You can whitelist a command in a certain channel or channels by first disabling the command in all channels and then enabling it in a certain channel or channels.</strong></p>
           </details>
         </td>
-        <td>=disable player #general<br>=enable spark #bot-spam</td>
+        <td>dd?disable drakenfrost #general<br>dd?enable price #bot-spam</td>
       </tr>
       <tr>
-        <td>=disabled</td>
+        <td>dd?disabled</td>
         <td>Shows which commands are currently disabled on the server.</td>
-        <td>=disabled</td>
+        <td>dd?disabled</td>
       </tr>
     </tbody>
   </table>
