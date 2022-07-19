@@ -1,0 +1,59 @@
+<!doctype html>
+<html id="home">
+<head>
+<title>Protobot</title> 
+<link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="menu">
+        <div>
+          <button class="invite discord" onclick="window.open('https://discord.com/oauth2/authorize?client_id=521180443958181889&permissions=2147798080&scope=applications.commands%20bot', '_blank')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Protobot</button>	 
+          <button class="invite paypal" onclick="window.open('https://www.paypal.com/paypalme/cryodev', '_blank')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>
+        <div class="topnav">
+          <a href="index.html">Home</a>
+          <a href="patch.html">Update Notes</a>
+          <a class="active" href="privacyPolicy.html">Privacy Policy</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div style="visibility: hidden">
+          <button class="invite discord">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Protobot</button>	 
+          <button class="invite paypal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>
+    </div>
+  
+  <button onclick="window.location.href = '#home';" id="myBtn" title="Go to top">Top</button>
+  <div class="Protobot">
+    <div>
+      <img style="border-radius:50%" src="https://cdn.discordapp.com/attachments/647256353844232202/919154496565821480/Protobot.png"/>
+    </div>
+    <div style="margin-top: -0.5vw;">
+      <h1>Protobot</h1>
+      <h4>Discord Bot for Dungeon Defenders 2. Made by Cryo#4704.</h4>
+    </div>
+  </div>
+<h1>Terms Of Service<hr></h1>
+<ul>
+    <li>I, Cryo, am not responsible for any use of Protobot, this includes but is not limited to the posting of content through Protobot commands and features.</li>
+    <li>You, the user, are not to misuse Protobot by any means. This includes rapidly spamming commands, posting inappropriate content through Protobot, etc.</li>
+    <li>If I determine that you are misusing Protobot, you will be completely banned from using any Protobot commands or features.</li>
+    <li>I reserve the right to ban anyone for any reason from using Protobot. Nobody has been banned yet, don't be the first!</li>
+</ul>
+<script>
+  //Get the button:
+  mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 400px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>
