@@ -27,6 +27,7 @@ a.is-warning:hover {
 
 .box {
     background-color: #282b30;
+    box-shadow: none;
 }
 
 table, th, tr, td {
