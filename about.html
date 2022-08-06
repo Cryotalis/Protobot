@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-us" class="has-background-dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protobot - About</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/647256353844232202/919154496565821480/Protobot.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(() => $("#nav-bar").load("nav.html"))
+
+    $.get(
+      "https://opensheet.elk.sh/1yOjZhkn9z8dJ8HMD0YSUl7Ijgd9o1KJ62Ecf4SgyTdU/Contributors",
+      members => {
+        members.forEach(member => {
+          document.getElementById('contributors').innerHTML += `
+            <div class="column is-half">
+              <div class="box">
+                <article class="media">
+                    <figure class="media-left">
+                      <p class="image is-64x64">
+                        <img src=${member.imageURL}>
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <div class="content">
+                        <p class="has-text-grey-light">
+                          <strong>${member.name}</strong> <small>${member.tag}</small>
+                          ${/Developer/i.test(member.roles) ? '<span class="tag is-warning is-rounded">Developer</span>' : ''}
+                          ${/PC/i.test(member.roles) ? '<span class="tag is-black is-rounded">PC</span>' : ''}
+                          ${/Playstation/i.test(member.roles) ? '<span class="tag is-link is-rounded">Playstation</span>' : ''}
+                          ${/Xbox/i.test(member.roles) ? '<span class="tag is-success is-rounded">Xbox</span>' : ''}
+                          <br>
+                          <ul class="has-text-grey-light" style="margin-left: 1em;">
+                            ${member.description.split(', ').map(pt => `<li>${pt}</li>`).join('')}
+                          </ul>
+                        </p>
+                      </div>
+                    </div>
+                </article>
+              </div>
+            </div>`
+
+        })
+      }
+    )
+  </script>
+</head>
+
+<body>
+  <div id="nav-bar"></div>
+    
+  <div class="container">
+
+    <h1 class="title is-2 has-text-light">Contributors<hr></h1>
+    
+    <div id="contributors" class="columns is-multiline is-vcentered"></div>
+    <br>
+    <h1 class="title is-2 has-text-light">About Protobot<hr></h1>
+    <p class="has-text-light">
+      I became interested in learning how to create my own Discord bot near the end of 2018. At the time, all I wanted to do was create a “mock” command, which would take some text and randomly capitalize the letters, emulating the mocking spongebob meme. After my first attempt failed, I gave up, but returned to the project 3 months later, this time succeeding. After this, I sought to replace the dd2tools bot, which had been retired just a month prior due to a lack of funding and interest from its creator. To do this, I created the first version of <a class="has-text-link" href="https://github.com/Cryotalis/Protobot-Old">Protobot</a>, written with NodeJS & Discord.js in Javascript.
+    </p>
+    <br>
+    <p class="has-text-light">
+      The primary feature of the dd2tools bot was its ability to pull up Shard information. To recreate this, I connected Protobot to a google spreadsheet I already compiled which contained a list of all Shards and Mods, and took some time to set up fuzzy matching to make sure that even when people misspelled a Shard, Protobot would still fetch the correct one. I started development of Protobot on Juicebags’s server, and within a week, developed several other commands in addition to shard and mod - minasc, drakenfrost, mastery, link, news, and a help command. Just a few days later, it would be added to the official Dungeon Defenders server.
+    </p>
+    <br>
+    <p class="has-text-light">
+      Protobot would go on to gain several new commands and lose old ones. After leaving the project for a couple of months, the bot fell into disrepair (in 2021) as it was not updated to the latest version of Discord.js. It would go down for about 2 months, after which I rewrote <a class="has-text-link" href="https://github.com/Cryotalis/Protobot-Python">Protobot in Python</a> with Discord.py instead to learn the language. Just a few months after this, the creator of Discord.py would announce that the library was being put on maintenance mode, at which point I rewrote Protobot again, returning to my roots and this time writing it in TypeScript with Discord.js. This is the version of Protobot that is in use today.
+    </p>
+  </div>
+  
+  <footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+      <p id="contact">
+        Got a concern, suggestion, or request? Join the <a class="has-text-link" href="https://discordapp.com/invite/YtwzVSp">Protobot Support Server</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

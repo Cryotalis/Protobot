@@ -1,338 +1,100 @@
 <!doctype html>
-<html id="home">
+<html lang="en-us" class="has-background-dark">
+
 <head>
-<title>Protobot</title> 
-<link rel = "stylesheet" type = "text/css" href = "styles.css"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protobot - Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/647256353844232202/919154496565821480/Protobot.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(() => $("#nav-bar").load("nav.html"))
+  </script>
 </head>
+
 <body>
-<div class="menu">
-  <div>
-    <button class="invite discord" onclick="window.open('https://discord.com/oauth2/authorize?client_id=521180443958181889&permissions=2147798080&scope=applications.commands%20bot', '_blank')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Protobot</button>	 
-    <button class="invite paypal" onclick="window.open('https://www.paypal.com/paypalme/cryodev', '_blank')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;</button>
-  </div>
-  <div class="topnav">
-    <a class="active" href="index.html">Home</a>
-    <a href="patch.html">Update Notes</a>
-    <a href="privacyPolicy.html">Privacy Policy</a>
-    <a href="index.html#contact">Contact</a>
-  </div>
-  <div style="visibility: hidden">
-    <button class="invite discord">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Protobot</button>	 
-    <button class="invite paypal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;</button>
-  </div>
-</div>
+  <div id="nav-bar"></div>
 
-<button onclick="window.location.href = '#home';" id="myBtn" title="Go to top">Top</button>
-<div class="Protobot">
-  <div>
-    <img style="border-radius:50%" src="https://cdn.discordapp.com/attachments/647256353844232202/919154496565821480/Protobot.png"/>
-  </div>
-  <div style="margin-top: -0.5vw;">
-    <h1>Protobot</h1>
-    <h4>Discord Bot for Dungeon Defenders 2. Made by Cryo#4704.</h4>
-  </div>
-</div>
-<h1>Commands<hr></h1>
-<button class="collapsible">DD2 Commands</button>
-<div class="content">
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 30vw">Command</th>
-        <th style="width: 55vw">Description</th>
-        <th style="width: 20vw">Example Usage</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>dd!shard [shard name]</td>
-        <td>Search for a shard in DD2.
-        </td>
-        <td>dd!shard destruction</td>
-      </tr>
-      <tr>
-        <td>dd!mod [mod name]</td>
-        <td>Search for a mod in DD2. Mod values will be from 1/10 to 10/10 at Chaos 8.<br><br>Protobot will assume you're looking for a servo if you did not specify whether you wanted a servo or a chip. 
-        </td>
-        <td>dd!mod defense rate</td>
-      </tr>
-      <tr>
-        <td>dd!price [amount] [quality/rarity] [item]</td>
-        <td>Find recommended prices for an item in DD2. When specifying an amount of material, the amount should be followed immediately by an x.
-          <br><br>
-          <details>
-            <summary>Advanced Usage Tips and Information</summary>
-            <p style="margin-bottom: 0.5vw;">All parameters except the item are optional. Defaults for the parameters are as follows:</p>
-            <ul style="margin: 0;">
-                <li>Mod Quality: 10/10</li>
-                <li>Mod Type: Servo</li>
-                <li>Material Amount: 99x (or 1x in special cases)</li>
-                <li>Pet Rarity: Highest Rarity (Legendary or Mythical)</li>
-            </ul>
-            <p>Prices taken from <a href="http://bit.ly/dd2market" target="_blank">http://bit.ly/dd2market</a></p>
-          </details>
-        </td>
-        <td>dd!price 9/10 controller servo<br>dd!price 5x c9 amps<br>dd!price legendary protobud</td>
-      </tr>
-      <tr>
-        <td>dd!drakenfrost</td>
-        <td>Shows the weapons and mods that are in rotation in Drakenfrost Keep.<br><br>Alias: drakenfrost ⇄ dfk
-        </td>
-        <td>dd!drakenfrost</td>
-      </tr>
-      <tr>
-        <td>dd!minasc [ascension] [floor]</td>
-        <td>Calculates your minimum ascension and talent caps, and gives you a suggestion on when to reset.<br><br>Alias: minasc ⇄ min
-        </td>
-        <td>dd!minasc 6969 420</td>
-      </tr>
-      <tr>
-        <td>dd!listshards [hero] [slot] [difficulty]</td>
-        <td>Lists all shards that are equippable on a given slot on a given hero from a given difficulty. Slot refers to relic/helmet/boots/etc; difficulty refers to Chaos tier.
-          <br><br>
-          <details>
-            <summary>Advanced Usage Tips and Information</summary>
-            <p style="margin-bottom: 0.5vw;">You must specify at least one parameter. You may input "All" for heroes to list all shards that can be used by ALL heroes, and "Armor" to list shards that go on any armor slot.</p>
-            <p>Alias: listshards ⇄ ls </a></p>
-          </details>
-        </td>
-        <td>dd!listshards Monk relic<br>dd!listshards Mercenary armor<br>dd!listshards Chaos 5 weapon</td>
-      </tr>
-      <tr>
-        <td>dd!listmods [hero] [slot] [difficulty]</td>
-        <td>Lists all mods that are equippable on a given slot on a given hero from a given difficulty. Slot here refers to armor/relic/weapon; difficulty refers to Chaos tier.
-          <br><br>
-          <details>
-            <summary>Advanced Usage Tips and Information</summary>
-            <p style="margin-bottom: 0.5vw;">You must specify at least one parameter. You may input "All" for heroes to list all mods that can be used by ALL heroes. If the mod can drop from a range of chaos tiers, the mod will be included in the list as long as it is within the range.</p>
-            <p>Alias: listmods ⇄ lm </a></p>
-          </details>
-        </td>
-        <td>dd!listmods Apprentice<br>dd!listmods Chaos 4 Armor<br>dd!listmods Weapon</td>
-      </tr>
-      <tr>
-        <td>dd!link [resource]</td>
-        <td>Summon a link to a commonly referenced resource.
-        </td>
-        <td>dd!link DPS</td>
-      </tr>
-      <tr>
-        <td>dd!image [name]</td>
-        <td>Summon a commonly referenced image.<br><br>Alias: image ⇄ img
-        </td>
-        <td>dd!image prime</td>
-      </tr>
-      <tr>
-        <td>dd!faq [FAQ]</td>
-        <td>Summon an answer to a frequently asked question.
-        </td>
-        <td>dd!faq patch</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<button class="collapsible">Miscellaneous Commands</button>
-<div class="content">
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 30vw">Command</th>
-        <th style="width: 55vw">Description</th>
-        <th style="width: 20vw">Example Usage</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>dd!ask [question]</td>
-        <td>Ask Protobot a yes/no question.</td>
-        <td>dd!ask is water wet?</td>
-      </tr>
-      <tr>
-        <td>dd!choose [option1, option2, ...]</td>
-        <td>Ask Protobot to choose between 2 or more things. Options must be separated by commas.
-          <br><br>
-          <details>
-            <summary>Advanced Usage Tips and Information</summary>
-            <p>Options can be separated by any character that is not a number, letter, space, or underscore. Any of these characters will work: <strong>- + = [ ] { } \ | / ' " : ; , . /</strong></p>
-          </details>
-        </td>
-        <td>dd!choose homework, DD2</td>
-      </tr>
-      <tr>
-        <td>dd!mock [text]</td>
-        <td>COnverT tExt INTo mOCKinG spOngebOB tEXT.</td>
-        <td>dd!mock why did they nerf rb</td>
-      </tr>
-      <tr>
-        <td>dd!drunk [text]</td>
-        <td>Convfrt text joto erunk text.</td>
-        <td>dd!drunk temple is the best map</td>
-      </tr>
-      <tr>
-        <td>dd!question</td>
-        <td>Generates a random conversation question.<br><br>Alias: question ⇄ q</td>
-        <td>dd!question</td>
-      </tr>
-      <tr>
-        <td>dd!time</td>
-        <td>Displays the current time in Gainesville, Florida.
-          <br><br>
-          <details>
-            <summary>Advanced Usage Tips and Information</summary>
-            <p>Can also be used to convert a certain date (optional) and time from one time zone to another.<br>Example: <strong>dd!time March 8 7pm PST to EST</strong></p>
-            <p>Can additionally be used to automatically convert a date (optional) and time in a given time zone to your own time zone using Discord's timestamp feature.<br>Example: <strong>dd!time April 20 6pm PST</strong></p> 
-            <p>Timezones taken from <a href="https://www.timeanddate.com/time/zones/" target="_blank">https://www.timeanddate.com/time/zones/</a></p>
-          </details>
-        </td>
-        <td>dd!time</td>
-      </tr>
-      <tr>
-        <td>dd!ping</td>
-        <td>Shows Protobot's response time.</td>
-        <td>dd!ping</td>
-      </tr>
-      <tr>
-        <td>dd!help</td>
-        <td>Displays a link to this website and a link to Protobot's support Discord server.</td>
-        <td>dd!help</td>
-      </tr>
-      <tr>
-        <td>@Protobot</td>
-        <td>Tells you the current command prefix and mod command prefix for Protobot.</td>
-        <td>@Protobot</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<button class="collapsible">Mod Commands (Admin Only)</button>
-<div class="content">
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 30vw">Command</th>
-        <th style="width: 55vw">Description</th>
-        <th style="width: 20vw">Example Usage</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>dd?prefix [prefix]<br>dd?modprefix [prefix]</td>
-        <td>Set a custom prefix or modprefix for your server. Not providing a prefix resets the prefixes to their defaults.</td>
-        <td>dd?prefix !<br>dd?modprefix ?</td>
-      </tr>
-      <tr>
-        <td>dd?disable [command] [channel(s)]<br>dd?enable [command] [channel(s)]</td>
-        <td>Disable or enable a command in one or more channels. Not specifying any channels disables or enables the command in all channels.
-          <br><br>
-          <details>
-            <summary>Advanced Usage Tips and Information</summary>
-            <p>You can whitelist a command in a certain channel or channels by first disabling the command in all channels and then enabling it in a certain channel or channels.</strong></p>
-            <p>Alias: disable ⇄ blacklist ⇄ bl<br>Alias: enable ⇄ whitelist ⇄ wl</p>
-          </details>
-        </td>
-        <td>dd?disable drakenfrost #general<br>dd?enable price #bot-spam</td>
-      </tr>
-      <tr>
-        <td>dd?disabled</td>
-        <td>Shows which commands are currently disabled on the server.</td>
-        <td>dd?disabled</td>
-      </tr>
-    </tbody>
-  </table>
-</div><br>
-<h1>Features<hr></h1>
-<div class="wrap">
-  <div class="image">
-    <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922269029152997376/unknown.png"> 
-  </div>
-  <div class="features">
-    <h2>Search for Shards</h2>
-    <div class="description bordered">  
-        <p>Get all the details and information on a certain shard.<br><br>Includes the Chaos tier, the gilded values, the heroes that can use the shard, and the gear slot that the shard can be equipped in.</p>
-    </div>
-  </div>
-</div>
-<div class="wrap">
-  <div class="image">
-    <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922268656321318942/unknown.png">
-  </div>
-  <div class="features">
-    <h2>Search for Mods</h2>
-    <div class="description bordered">  
-        <p>Get all the details and information on a certain mod.<br><br>Includes the Chaos tier(s), the heroes that can use the mod, and the gear slot that the mod can be tinkered onto.</p>
-    </div>
-  </div>
-</div>
-<div class="wrap">
-  <div class="image">
-    <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922269861445517362/unknown.png">
-  </div>
-  <div class="features">
-    <h2>Search for Recommended Prices</h2>
-    <div class="description bordered">  
-        <p>Fetch the recommended prices for an item in DD2.<br><br>Prices are sourced from a spreadsheet maintained by market experts and top players.</p>
-    </div>
-  </div>
-</div>
-<div class="wrap">
-  <div class="image">
-    <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922270774205759498/unknown.png"> 
-  </div>
-  <div class="features">
-    <h2>Drakenfrost Rotation</h2>
-    <div class="description bordered">  
-        <p>Find out what weapons and mods are in rotation this week in Drakenfrost Keep.<br><br>Also shows which mod is available next rotation, and how much time remains until the next rotation arrives.</p>
-    </div>
-  </div>
-</div>
-<div class="wrap">
-  <div class="image">
-    <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922271981108330516/unknown.png"> 
-  </div>
-  <div class="features">
-    <h2>Calculate your Minimum Ascension and Talent Caps</h2>
-    <div class="description bordered">  
-        <p>Calculates the Minimum Ascension and Talent Caps you would have if you Reset on a given Floor with a given amount of Ascension.<br><br>Protobot will assess your Minimum Ascension and advise you on whether or not you are ready to Reset.</p>
-    </div>
-  </div>
-</div>
-<h1 id="contact">Contact<hr></h1> 
-<p class="contact" style="font-size: 1vw;">Need to talk to me directly about a suggestion or a bug? Join my <a href="https://discord.gg/YtwzVSp" style="color:cornflowerblue">Discord Server</a> or contact me directly via PM (you need to add me as a friend to do this) on Discord at Cryo#4704.
-  <br>
-  You may also contact me on Twitter <a style="color:cornflowerblue" target="_blank" href="https://twitter.com/Cryotalis">here</a> or on Reddit <a style="color:cornflowerblue" target="_blank" href="https://www.reddit.com/user/Cry0_">here</a>.
-  <br><br>
-<iframe src="https://discordapp.com/widget?id=379501550097399810&theme=dark" width="350" height="400" allowtransparency="true" frameborder="0"></iframe>
-<script>
-  //Get the button:
-  mybutton = document.getElementById("myBtn");
-  
-  // When the user scrolls down 400px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
-  
-  function scrollFunction() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-  
-  /* Code to allow for the collapsing of command categories. Categories are expanded by default.*/
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
+  <div class="container">
+    <h1 class="title is-2 has-text-light">Features<hr></h1><br>
 
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("collapsibleActive");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight < content.scrollHeight + "px" && content.style.maxHeight !== ""){
-        content.style.maxHeight = content.scrollHeight + "px";
-      } else {
-        content.style.maxHeight = "0px";
-      } 
-    });
-  }
-</script>
-</body>	
+    <div class="columns is-vcentered ml-1">
+      <div class="column">
+        <h1 class="title is-4 has-text-white">Search for Shards and Mods</h1>
+        <div class="block has-text-grey-light">Get all the details and information on any Shard or Mod.</div>
+        <div class="block has-text-grey-light">
+          Includes drop locations (Chaos Tier), gilded values (Shards only), upgrade levels (Shards only), applicable Heroes, and gear slot.
+        </div>
+      </div>
+      <div class="column has-text-centered">
+        <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922269029152997376/unknown.png">
+      </div>
+    </div><br>
+
+    <div class="columns is-vcentered ml-1">
+      <div class="column">
+        <h1 class="title is-4 has-text-white">Search for Defense Builds</h1>
+        <div class="block has-text-grey-light">Find various recommended builds by top players for any defense in the game.</div>
+      </div>
+      <div class="column has-text-centered">
+        <img class="bordered" src="https://cdn.discordapp.com/attachments/287546233210273792/999968339386433566/Flame_Aura.png">
+      </div>
+    </div><br>
+
+    <div class="columns is-vcentered ml-1">
+      <div class="column">
+        <h1 class="title is-4 has-text-white">Search for Recommended Prices for Items</h1>
+        <div class="block has-text-grey-light">Get the recommended prices for items.</div>
+        <div class="block has-text-grey-light">
+          Prices are sourced from a spreadsheet maintained by market experts and top players.
+        </div>
+      </div>
+      <div class="column has-text-centered">
+        <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922269861445517362/unknown.png">
+      </div>
+    </div><br>
+
+    <div class="columns is-vcentered ml-1">
+      <div class="column">
+        <h1 class="title is-4 has-text-white">Calculate your Minimum Ascension and Talent Caps</h1>
+        <div class="block has-text-grey-light">
+          Calculates the Minimum Ascension and Talent Caps you would have if you Reset on a given Floor with a given amount of Ascension.
+        </div>
+        <div class="block has-text-grey-light">
+          Protobot will assess your Minimum Ascension and advise you on whether or not you are ready to Reset.
+        </div>
+      </div>
+      <div class="column has-text-centered">
+        <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922271981108330516/unknown.png">
+      </div>
+    </div><br>
+
+    <div class="columns is-vcentered ml-1">
+      <div class="column">
+        <h1 class="title is-4 has-text-white">Check the Drakenfrost Keep Rotation</h1>
+        <div class="block has-text-grey-light">
+          Find out what weapons and mods are in rotation this week in Drakenfrost Keep.
+        </div>
+        <div class="block has-text-grey-light">
+          Also shows which mod is available next rotation, and how much time remains until the next rotation arrives.
+        </div>
+      </div>
+      <div class="column has-text-centered">
+        <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922270774205759498/unknown.png">
+      </div>
+    </div><br>
+
+  </div>
+  
+  <footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+      <p id="contact">
+        Got a concern, suggestion, or request? Join the <a class="has-text-link" href="https://discordapp.com/invite/YtwzVSp">Protobot Support Server</a>.
+      </p>
+    </div>
+  </footer>
+
+</body>
 </html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-us" class="has-background-dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protobot - News</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/647256353844232202/919154496565821480/Protobot.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(() => $("#nav-bar").load("nav.html"))
+  </script>
+</head>
+
+<body>
+  <div id="nav-bar"></div>
+  
+  <div class="container">
+    <h1 class="title is-2 has-text-light">News and Updates (July 2022)<hr></h1>
+    <div class="content has-text-grey-light">
+      <ul>
+        <li>
+          This website has received a redesign, and several new pages have been added.
+        </li>
+        <li>
+          Protobot has been verified! At the time of writing, it is used in 80 servers.
+        </li>
+        <li>
+          Support for message commands (commands that use <strong>dd!</strong> or <strong>dd?</strong>) has been discontinued. The vast majority of users have already switched to slash commands, and from now on, only slash commands will be supported. If slash commands do not work on your server, please click the "Add To Server" button. It will prompt you to enable slash commands. You <strong>don't</strong> need to kick and re-invite Protobot to enable slash commands.
+        </li>
+        <li>
+          The <strong>feedback</strong> and <strong>bugreport</strong> commands have been removed. These commands saw little use, and the few people who actually used them did not use them as they were intended to be used. Going forward, feedback and bug reports for Protobot should be sent to the <a class="has-text-link" href="https://discordapp.com/invite/YtwzVSp">Protobot Support Server</a> instead. It's easier for me to respond to reports and feedback this way as well.
+        </li>
+        <li>
+          The <strong>custom prefix</strong> and <strong>blacklist/whitelist commands</strong> features have been removed. Since Protobot has switched to slash commands, the only prefix now is <strong>/</strong>, and slash commands can be whitelisted and blacklisted through Discord settings (<code>Server Settings</code> > <code>Integrations</code> > <code>Protobot</code> > <code>Manage</code>).
+        </li>
+        <li>
+          The old Python version of Protobot is now open source, and can be found <a class="has-text-link" href="https://github.com/Cryotalis/Protobot-Python">here</a>. It was written using <strong>discord.py</strong>, and was retired at some point in December 2021. Please note that most commands will not work if you don't connect Protobot to the public database yourself.
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+      <p id="contact">
+        Got a concern, suggestion, or request? Join the <a class="has-text-link" href="https://discordapp.com/invite/YtwzVSp">Protobot Support Server</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-us" class="has-background-dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protobot - Commands</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel = "stylesheet" type = "text/css" href = "styles.css"/>
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/647256353844232202/919154496565821480/Protobot.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(() => $("#nav-bar").load("nav.html"))
+
+    $.get(
+      "https://opensheet.elk.sh/1yOjZhkn9z8dJ8HMD0YSUl7Ijgd9o1KJ62Ecf4SgyTdU/Commands",
+      commands => {
+        const gameCommands = commands.filter(cmd => cmd.type === 'game').sort((a,b) => (a.description > b.description) ? 1 : -1)
+        for(let i = 0; i < gameCommands.length; i++){
+          document.getElementById('game-commands').innerHTML += `<tr><td>${gameCommands[i].name}</td><td>${gameCommands[i].description}</td></tr>`
+        }
+
+        const regularCommands = commands.filter(cmd => cmd.type !== 'game').sort((a,b) => (a.description > b.description) ? 1 : -1)
+        for(let i = 0; i < regularCommands.length; i++){
+          if (regularCommands[i].type === 'moderator') regularCommands[i].name += '\u2800<span class="tag is-warning is-rounded">Mod Command</span>'
+          document.getElementById('regular-commands').innerHTML += `<tr><td>${regularCommands[i].name}</td><td>${regularCommands[i].description}</td></tr>`
+        }
+      }
+    )
+
+    function showGameCommands() {
+      document.getElementById('menu-game-commands').setAttribute('class', 'is-active')
+      document.getElementById('menu-regular-commands').setAttribute('class', 'is-inactive')
+      document.getElementById('game-commands').style.display = 'contents'
+      document.getElementById('regular-commands').style.display = 'none'
+    }
+
+    function showRegCommands() {
+      document.getElementById('menu-game-commands').setAttribute('class', 'is-inactive')
+      document.getElementById('menu-regular-commands').setAttribute('class', 'is-active')
+      document.getElementById('game-commands').style.display = 'none'
+      document.getElementById('regular-commands').style.display = 'contents'
+    }
+  </script>
+</head>
+
+<body>
+  <div id="nav-bar"></div>
+  
+  <div class="container">
+    <h1 class="title is-2 has-text-light">Commands<hr></h1> 
+    <div class="tabs is-toggle is-fullwidth is-medium" style="margin-bottom: 0.5rem;">
+      <ul>
+        <li id="menu-game-commands" class="is-active"><a onclick="showGameCommands()">Game Commands</a></li>
+        <li id="menu-regular-commands"><a onclick="showRegCommands()">Regular Commands</a></li>
+      </ul>
+    </div>
+
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th style="width:30%">Command</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody id="game-commands" style="display:contents"></tbody>
+
+      <tbody id="regular-commands" style="display: none;"></tbody>
+    </table>
+  </div>
+  
+  <footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+      <p id="contact">
+        Got a concern, suggestion, or request? Join the <a class="has-text-link" href="https://discordapp.com/invite/YtwzVSp">Protobot Support Server</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
