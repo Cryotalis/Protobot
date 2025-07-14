@@ -5,17 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Protobot - Home</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel = "stylesheet" type = "text/css" href = "styles.css"/>
-  <link rel="icon" href="./images/Protobot Blue.png">
+  <link rel="icon" href="./assets/Protobot Blue.png">
+  <!-- https://cdnjs.com/libraries/font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(() => $("#nav-bar").load("nav.html"))
-  </script>
+  <script type="text/javascript" src="./js/load-menu.js"></script>
 </head>
 
 <body>
-  <div id="nav-bar"></div>
 
   <div class="container">
     <h1 class="title is-2 has-text-light">Features<hr></h1><br>
@@ -24,12 +22,12 @@
       <div class="column">
         <h1 class="title is-4 has-text-white">Search for Shards and Mods</h1>
         <div class="block has-text-grey-light">Get all the details and information on any Shard or Mod.</div>
-        <div class="block has-text-grey-light">
-          Includes drop locations (Chaos Tier), gilded values (Shards only), upgrade levels (Shards only), applicable Heroes, and gear slot.
-        </div>
       </div>
       <div class="column has-text-centered">
-        <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922269029152997376/unknown.png">
+        <video class="bordered" autoplay loop muted playsinline>
+          <source src="./assets/shard demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div><br>
 
@@ -39,26 +37,26 @@
         <div class="block has-text-grey-light">Find various recommended builds by top players for any defense in the game.</div>
       </div>
       <div class="column has-text-centered">
-        <img class="bordered" src="https://cdn.discordapp.com/attachments/287546233210273792/999968339386433566/Flame_Aura.png">
+        <img class="bordered" src="./assets/Flame Aura.png">
       </div>
     </div><br>
 
     <div class="columns is-vcentered ml-1">
       <div class="column">
         <h1 class="title is-4 has-text-white">Search for Recommended Prices for Items</h1>
-        <div class="block has-text-grey-light">Get the recommended prices for items.</div>
-        <div class="block has-text-grey-light">
-          Prices are sourced from a spreadsheet maintained by market experts and top players.
-        </div>
+        <div class="block has-text-grey-light">Get recommended prices for items.</div>
       </div>
       <div class="column has-text-centered">
-        <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922269861445517362/unknown.png">
+        <video class="bordered" autoplay loop muted playsinline>
+          <source src="./assets/price demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div><br>
 
     <div class="columns is-vcentered ml-1">
       <div class="column">
-        <h1 class="title is-4 has-text-white">Calculate your Minimum Ascension and Talent Caps</h1>
+        <h1 class="title is-4 has-text-white">Calculate your Minimum Ascension & Talent Caps</h1>
         <div class="block has-text-grey-light">
           Calculates the Minimum Ascension and Talent Caps you would have if you Reset on a given Floor with a given amount of Ascension.
         </div>
@@ -67,7 +65,10 @@
         </div>
       </div>
       <div class="column has-text-centered">
-        <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922271981108330516/unknown.png">
+        <video class="bordered" autoplay loop muted playsinline>
+          <source src="./assets/minasc demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div><br>
 
@@ -75,26 +76,18 @@
       <div class="column">
         <h1 class="title is-4 has-text-white">Check the Drakenfrost Keep Rotation</h1>
         <div class="block has-text-grey-light">
-          Find out what weapons and mods are in rotation this week in Drakenfrost Keep.
-        </div>
-        <div class="block has-text-grey-light">
-          Also shows which mod is available next rotation, and how much time remains until the next rotation arrives.
+          Find out what weapons and mods are in rotation in Drakenfrost Keep.
         </div>
       </div>
       <div class="column has-text-centered">
-        <img class="bordered" src="https://cdn.discordapp.com/attachments/647256353844232202/922270774205759498/unknown.png">
+        <video class="bordered" autoplay loop muted playsinline>
+          <source src="./assets/drakenfrost demo1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div><br>
 
   </div>
-  
-  <footer class="footer has-background-dark">
-    <div class="content has-text-centered has-text-white">
-      <p id="contact">
-        Got a concern, suggestion, or request? Join the <a class="has-text-link" href="https://discordapp.com/invite/YtwzVSp">Protobot Support Server</a>.
-      </p>
-    </div>
-  </footer>
 
 </body>
 </html>

@@ -1,0 +1,142 @@
+<div class="container">
+  <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="./assets/Protobot Nav Logo.png" width="112" height="28">
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="protoNavbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    
+    <div id="protoNavbar" class="navbar-menu">
+      
+      <div class="navbar-start">
+        <a class="navbar-item" href="index.html">
+          <span class="icon-text">
+            <span class="icon"><i class="fas fa-home"></i></span>
+            <span>Home</span>
+          </span>
+        </a>
+        <a class="navbar-item" href="commands.html">
+          <span class="icon-text">
+            <!-- <span class="icon"><i class="fa-solid fa-code"></i></span> -->
+            <span class="icon"><i class="fa-solid fa-terminal"></i></span>
+            <span>Commands</span>
+          </span>
+        </a>
+        <a class="navbar-item" href="news.html">
+          <span class="icon-text">
+            <span class="icon"><i class="fa-solid fa-newspaper"></i></span>
+            <span>News</span>
+          </span>
+        </a>
+        <a class="navbar-item" href="about.html">
+          <span class="icon-text">
+            <span class="icon"><i class="fa-solid fa-info"></i></span>
+            <!-- <span class="icon"><i class="fa-solid fa-question"></i></span> -->
+            <span>About</span>
+          </span>
+        </a>
+        <a class="navbar-item" title="Source Code (GitHub)" target="_blank" href="https://github.com/Cryotalis/Protobot-TS">
+          <span class="icon-text">
+            <span class="icon"><i class="fa-solid fa-code"></i></span>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">More</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="terms.html">Terms of Use</a>
+            <a class="navbar-item" href="terms.html#privacy-policy">Privacy Policy</a>
+            <a class="navbar-item" id="open-contact-modal">Contact</a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="navbar-end">
+        <div class="navbar-item buttons">
+          <a class="button is-link" target="_blank" href="https://discord.com/oauth2/authorize?client_id=521180443958181889&permissions=314432&integration_type=0&scope=bot+applications.commands">
+            <span class="icon-text">
+              <span class="icon"><i class="fa-brands fa-discord"></i></span>
+              <strong>Add To Server</strong>
+            </span>
+          </a>
+          <a class="button is-warning" target="_blank" href="https://www.paypal.com/paypalme/hywell03">
+            <span class="icon-text">
+              <span class="icon"><i class="fa-brands fa-paypal"></i></span>
+              <strong>Donate</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</div>
+
+<section class="section">
+  <div class="container columns is-vcentered">
+    <div class="column is-two-fifths">
+      <figure class="image is-128x128 is-pulled-right">
+        <img class="is-rounded" src="./assets/Protobot Blue.png">
+      </figure>
+    </div>
+    <div class="column">
+      <h1 class="title is-1 has-text-light">Protobot</h1>
+      <h2 class="subtitle has-text-grey-light">Discord Bot for Dungeon Defenders 2 by Hywell.</h2>
+    </div>
+  </div>
+</section>
+
+<div id="contact-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content" style="width: 660px;">
+    <article class="message">
+      <div class="message-header">
+        <p>Contact Info</p>
+        <button id="close-contact-modal" class="delete" aria-label="delete"></button>
+      </div>
+      <div class="message-body">
+        The fastest way to reach me is through Protobot's Support Server. If you wish, you may also contact me on Reddit or Twitter, but I am not nearly as active on those platforms.
+        <br><br>
+        <a class="button is-link" target="_blank" href="https://discordapp.com/invite/YtwzVSp">
+            <span class="icon-text">
+              <span class="icon"><i class="fa-brands fa-discord"></i></span>
+              <strong>Join the Support Server</strong>
+            </span>
+        </a>
+        <a class="button has-background-reddit" target="_blank" href="https://www.reddit.com/user/hyw_ell/">
+            <span class="icon-text">
+              <span class="icon"><i class="fa-brands fa-reddit-alien"></i></span>
+              <strong>DM me on Reddit</strong>
+            </span>
+        </a>
+        <a class="button has-background-twitter" target="_blank" href="https://x.com/hyw_ell">
+            <span class="icon-text">
+              <span class="icon"><i class="fa-brands fa-twitter"></i></span>
+              <strong>DM me on Twitter</strong>
+            </span>
+        </a>
+      </div>
+    </article>
+  </div>
+</div>
+
+<script>
+  $(document).ready(() => {
+      // Check for click events on the navbar burger icon
+      $(".navbar-burger").click(() => {
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          $(".navbar-burger").toggleClass("is-active")
+          $(".navbar-menu").toggleClass("is-active")
+      })
+      
+      $("#open-contact-modal").click(() => $("#contact-modal").addClass("is-active"))
+      $("#close-contact-modal").click(() => $("#contact-modal").removeClass("is-active"))
+  })
+</script>

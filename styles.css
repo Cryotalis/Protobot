@@ -1,18 +1,24 @@
-.bordered {
-    border: 2px solid grey;
-    border-radius: 15px;
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+
+/* --- Bulma Overrides --- */
+
+.title {
+    --bulma-title-weight: 600;
+    --bulma-content-heading-weight: 600;
 }
 
-strong {
-    color: lightgrey;
+.navbar-item {
+    --bulma-navbar-item-color: white;
 }
 
-code {
-    color: lightgrey;
-    background-color: #282b30;
+.is-transparent {
+    background-color: transparent;
 }
 
-/* Overriding Bulma for better colors and dark mode */
+.has-background-dark {
+    background-color: #363636 !important;
+}
+
 .is-warning {
     background-color: orange !important;
 }
@@ -30,16 +36,16 @@ a.is-warning:hover {
     box-shadow: none;
 }
 
+hr {
+    background-color: lightgrey;
+}
+
+/* --- End of Bulma Overrides --- */
+
+/* --- Table Stuff --- */
+
 table, th, tr, td {
     border: none !important;
-}
-
-th {
-    background-color: orange;
-}
-
-tr {
-    color: lightgray !important;
 }
 
 tr:nth-child(even) {
@@ -48,4 +54,42 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
     background-color: rgb(44, 44, 46) !important;
+}
+
+/* --- End of Table Stuff --- */
+
+strong {
+    color: lightgrey;
+}
+
+code {
+    color: lightgrey;
+    background-color: #282b30;
+}
+
+footer {
+	--bulma-footer-background-color: var(--bulma-scheme-main-bis);
+	--bulma-footer-color: false;
+	--bulma-footer-padding: 3rem 1.5rem 6rem;
+	background-color: transparent;
+	padding: var(--bulma-footer-padding);
+}
+
+.bordered {
+    border: 2px solid grey;
+    border-radius: 15px;
+}
+
+.has-background-reddit {
+    background-color: orangered;
+}
+
+.has-background-twitter {
+    background-color: #1c96e8;
+}
+
+
+#contributors > .cell > .box {
+    height: 100%;
+    padding-bottom: 10px;
 }
