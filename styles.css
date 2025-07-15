@@ -88,6 +88,9 @@ footer {
     background-color: #1c96e8;
 }
 
+.modal {
+    max-width: 90vw;
+}
 
 #contributors > .cell > .box {
     height: 100%;
